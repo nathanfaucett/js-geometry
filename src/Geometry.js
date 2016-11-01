@@ -86,9 +86,8 @@ GeometryPrototype.setIndex = function(index) {
     return this;
 };
 
-GeometryPrototype.parse = function() {
-    var data = this.data,
-        dataBones = data.bones,
+GeometryPrototype.parse = function(data) {
+    var dataBones = data.bones,
         bones = this.bones,
         noIndices = false,
         items, i, il, bone, dataBone;
@@ -152,9 +151,7 @@ GeometryPrototype.parse = function() {
     this.calculateAABB();
     this.calculateBoundingSphere();
 
-    JSONAssetPrototype.parse.call(this);
-
-    return this;
+    return data;
 };
 
 function createIndexArray(count) {
