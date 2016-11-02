@@ -15,7 +15,10 @@ var uv = [
 
 
 tape("geometry", function(assert) {
-    var geometry = Geometry.create("geometry", null);
+    var geometry = Geometry.create({
+        name: "geometry",
+        src: null
+    });
 
     geometry.addAttribute("position", 8, 2, Float32Array, false, position);
     geometry.addAttribute("uv", 8, 2, Float32Array, false, uv);

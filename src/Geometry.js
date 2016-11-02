@@ -40,13 +40,6 @@ function Geometry() {
 JSONAsset.extend(Geometry, "geometry.Geometry");
 GeometryPrototype = Geometry.prototype;
 
-GeometryPrototype.construct = function(name, src) {
-
-    JSONAssetPrototype.construct.call(this, name, src);
-
-    return this;
-};
-
 GeometryPrototype.destructor = function() {
 
     JSONAssetPrototype.destructor.call(this);

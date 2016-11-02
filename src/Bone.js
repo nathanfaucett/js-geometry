@@ -12,7 +12,7 @@ module.exports = GeometryBone;
 
 
 function GeometryBone() {
-    
+
     this.parentIndex = null;
     this.name = null;
 
