@@ -163,7 +163,7 @@ function createIndexTypeArray(Class, count) {
 }
 
 GeometryPrototype.calculateAABB = function() {
-    var position = this.attributes.__hash.position;
+    var position = this.attributes.getObject().position;
 
     if (position) {
         aabb3.fromPointArray(this.aabb, position.array);
@@ -172,7 +172,7 @@ GeometryPrototype.calculateAABB = function() {
 };
 
 GeometryPrototype.calculateBoundingSphere = function() {
-    var position = this.attributes.__hash.position,
+    var position = this.attributes.getObject().position,
         bx = 0,
         by = 0,
         bz = 0,
@@ -236,7 +236,7 @@ GeometryPrototype.calculateNormals = function() {
         vc = calculateNormals_vc,
 
         attributes = this.attributes,
-        attributesHash = attributes.__hash,
+        attributesHash = attributes.getObject(),
         position = attributesHash.position,
         normal = attributesHash.normal,
         index = this.index,
@@ -360,7 +360,7 @@ GeometryPrototype.calculateTangents = function() {
 
         attributes = this.attributes,
         index = this.index,
-        attributeHash = attributes.__hash,
+        attributeHash = attributes.getObject(),
         position = attributeHash.position,
         normal = attributeHash.normal,
         tangent = attributeHash.tangent,
