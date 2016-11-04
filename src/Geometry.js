@@ -126,19 +126,21 @@ GeometryPrototype.parse = function(data) {
         this.index = createIndexTypeArray(NativeUint16Array, this.getAttribute("position").size());
     }
 
-    i = -1;
-    il = dataBones.length - 1;
-    while (i++ < il) {
-        dataBone = dataBones[i];
-        bone = Bone.create(dataBone.parent, dataBone.name);
+    if (dataBones && dataBones.length) {
+        i = -1;
+        il = dataBones.length - 1;
+        while (i++ < il) {
+            dataBone = dataBones[i];
+            bone = Bone.create(dataBone.parent, dataBone.name);
 
-        vec3.copy(bone.position, dataBone.position);
-        quat.copy(bone.rotation, dataBone.rotation);
-        vec3.copy(bone.scale, dataBone.scale);
-        mat4.copy(bone.bindPose, dataBone.bindPose);
-        bone.skinned = !!dataBone.skinned;
+            vec3.copy(bone.position, dataBone.position);
+            quat.copy(bone.rotation, dataBone.rotation);
+            vec3.copy(bone.scale, dataBone.scale);
+            mat4.copy(bone.bindPose, dataBone.bindPose);
+            bone.skinned = !!dataBone.skinned;
 
-        bones[bones.length] = bone;
+            bones[bones.length] = bone;
+        }
     }
 
     this.calculateAABB();
