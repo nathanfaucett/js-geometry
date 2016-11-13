@@ -35,7 +35,7 @@
     "@nathanfaucett/assets": "git://github.com/nathanfaucett/js-assets.git",
     "@nathanfaucett/fast_hash": "^0.0.3",
     "@nathanfaucett/is_null_or_undefined": "^0.0.1",
-    "@nathanfaucett/mat4": "^0.0.2",
+    "@nathanfaucett/mat4": "^0.0.3",
     "@nathanfaucett/mathf": "^0.0.3",
     "@nathanfaucett/quat": "^0.0.2",
     "@nathanfaucett/vec3": "^0.0.2"
